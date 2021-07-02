@@ -13,14 +13,23 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package main
+package cmd
 
 import (
-	"github.com/divrhino/studybuddy/cmd"
 	"github.com/divrhino/studybuddy/data"
+	"github.com/spf13/cobra"
 )
 
-func main() {
-	data.OpenDatabase()
-	cmd.Execute()
+// initCmd represents the init command
+var initCmd = &cobra.Command{
+	Use:   "init",
+	Short: "Initialise a new studybuddy database and table",
+	Long:  `Initialise a new studybuddy database and table`,
+	Run: func(cmd *cobra.Command, args []string) {
+		data.CreateTable()
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(initCmd)
 }
