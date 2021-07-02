@@ -15,8 +15,12 @@ limitations under the License.
 */
 package main
 
-import "github.com/divrhino/studybuddy/cmd"
+import (
+	"github.com/divrhino/studybuddy/cmd"
+	"github.com/divrhino/studybuddy/data"
+)
 
 func main() {
+	data.OpenDatabase()
 	cmd.Execute()
 }
