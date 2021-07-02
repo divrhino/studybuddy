@@ -74,3 +74,17 @@ func promptGetInput(pc promptContent) string {
 
 	return result
 }
+
+func createNewNote() {
+	wordPromptContent := promptContent{
+		"Please provide a word.",
+		"What word would you like to make a note of?",
+	}
+	word := promptGetInput(wordPromptContent)
+
+	definitionPromptContent := promptContent{
+		"Please provide a definition.",
+		fmt.Sprintf("What is the definition of %s?", word),
+	}
+	definition := promptGetInput(definitionPromptContent)
+}
