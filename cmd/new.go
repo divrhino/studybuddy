@@ -114,7 +114,13 @@ func createNewNote() {
 
 	definitionPromptContent := promptContent{
 		"Please provide a definition.",
-		fmt.Sprintf("What is the definition of %s?", word),
+		fmt.Sprintf("What is the definition of the %s?", word),
 	}
 	definition := promptGetInput(definitionPromptContent)
+
+	categoryPromptContent := promptContent{
+		"Please provide a category.",
+		fmt.Sprintf("What category does %s belong to?", word),
+	}
+	category := promptGetSelect(categoryPromptContent)
 }
