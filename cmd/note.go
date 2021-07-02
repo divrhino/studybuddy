@@ -16,8 +16,6 @@ limitations under the License.
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
@@ -26,9 +24,6 @@ var noteCmd = &cobra.Command{
 	Use:   "note",
 	Short: "A note can be anything you'd like to study and review",
 	Long:  `A note can be anything you'd like to study and review`,
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("note called")
-	},
 }
 
 func init() {
