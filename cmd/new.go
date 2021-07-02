@@ -31,6 +31,11 @@ var newCmd = &cobra.Command{
 	},
 }
 
+type promptContent struct {
+	errorMsg string
+	label    string
+}
+
 func init() {
 	noteCmd.AddCommand(newCmd)
 }
